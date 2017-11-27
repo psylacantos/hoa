@@ -1,0 +1,126 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 11 26, 17, 3:04:22 PM
+    Author     : Psyla Cantos
+*/
+
+body{
+    background-color: white;
+}
+
+.header{
+    background-color: #0249A1;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 5px 5px;
+    color: white;
+    font-family: sans-serif; 
+    width: 100%;
+}
+
+.logout{
+    float: right;
+}
+
+.body{
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: row;
+}
+
+.sidebar{
+    background-color: #0249A1;
+    width: 20%;
+    margin-left: 5px;
+    margin-right: 25px;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    padding: 5px 5px;
+    height: 100%;
+}
+
+content{
+    color: black;
+    margin-left: 15px;
+    margin-right: 5px;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    padding: 5px 5px;
+    width: 300%;
+    box-shadow: 4px 8px 10px 0 rgba(0,0,0,0.2);
+    height: 100%;
+    width: 200%;
+}
+
+ul{
+    margin-left: -20px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+ul:hover{
+    color:yellow;
+}
+
+li{
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+li:hover{
+    color:yellow;
+}
+
+.table{
+    border-collapse: collapse;
+    
+}
+
+.table td, .table th{
+    border: 1px solid #ddd;
+    padding: 12px;
+    font-size: 12px;
+}
+
+.buttonTD{
+    text-align: center;
+}
+
+.table tr:nth-child(even){background-color: #f2f2f2;}
+
+.table th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #024A91;
+    color: white;
+}
+
+input[type=submit]{
+    width: 100px;
+    height: 40px;
+}
+
+h3{
+    color: white;
+}
+
+.welcome{
+    height: 400px;
+    width: 400px;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -200px;
+    text-align: center;
+}

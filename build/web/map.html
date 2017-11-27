@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Community Map</title>
+  <style>
+    #map{
+      height:400px;
+      width: 50%;
+      margin: 0 auto;
+
+    }
+
+  </style>
+</head>
+<body bgcolor = "#2c2c2c">
+  <h1><font color ="white"> Community Mapping </font></h1>
+  <br><div id="map"></div>
+  <script>
+    function initMap(){
+      //Map Options
+      var options = {
+        zoom:17,
+        center:{lat:13.980804, lng:121.166069}
+      };
+
+      //New Map
+      var map = new google.maps.Map(document.getElementById('map'), options);
+      
+
+  
+      //Listener for click on maps
+      google.maps.event.addListener(map, 'click', function(event){
+        //Add MapMarker
+        addMarker({coordinates:event.latLng});
+      });
+
+//Array of Markers
+      var markers = [
+        {
+        coordinates:{lat:13.980804, lng:121.166069},
+        content: '<h1>CENTER </h1>'
+        }
+      ];
+           
+        //Loop Through Markers
+      for(var i = 0; i< markers.length; i++){
+          addMarker(markers[i]); //Adds Marker
+        }
+        
+    //Add Marker Function
+    function addMarker(mark){
+        var marker = new google.maps.Marker({
+          position:mark.coordinates,
+          map:map
+
+        });
+
+
+        //Check content
+        if(mark.content){
+          var infoWindow = new google.maps.InfoWindow({
+            content: mark.content
+          });
+
+          marker.addListener('mouseover',function(){
+            infoWindow.open(map,marker);
+
+
+          });
+
+
+        }
+      }
+    }
+    
+  </script>
+  
+  <form action = "communitymap.jsp" method ="post">
+    <input type ="hidden" name = "y" >
+    <input type ="hidden" name="x">
+    <input type ="submit" name ="submit" value="Get Directions">
+  </form>
+
+
+  <script async defer
+   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6MbF9zI7KPelsjU1VLveRHxovOjIEBVo&callback=initMap">
+ </script>
+
+</body>
+</html>
